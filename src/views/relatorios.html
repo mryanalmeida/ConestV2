@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
+    <title>Conest - Relatórios</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Relatórios</h1>
+        <hr class="mt-4 border border-secondary border -1">
+        <br>
+        <div class="row justify-content-center">
+            <!-- Botão Clientes -->
+            <button class="col-md-2 btn btn-light me-5" onclick="gerarPdfClientes()">
+                <img src="../public/img/clientes.png" alt="Clientes" class="img-fluid custom-image">
+                <p class="mt-2">Clientes</p>
+            </button>
+
+            <!-- Botão Fornecedores -->
+            <button class="col-md-2 btn btn-light me-5" onclick="gerarPdfFornecedores()">
+                <img src="../public/img/fornecedores.png" alt="Fornecedores" class="img-fluid custom-image">
+                <p class="mt-2">Fornecedores</p>
+            </button>
+
+            <!-- Botão Produtos -->
+            <button class="col-md-2 btn btn-light" onclick="gerarPdfProdutos()">
+                <img src="../public/img/produtos.png" alt="Produtos" class="img-fluid custom-image">
+                <p class="mt-2">Produtos</p>
+            </button>
+        </div>
+    </div>
+    </div>
+
+    <script src="../public/js/bootstrap.min.js"></script>
+    <script src="relatorios.js"></script>
+</body>
+
+</html>

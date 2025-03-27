@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>Conest - Produtos</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Produtos</h1>
+        <form id="frmProduct" class="mt-2 row g-3">
+
+            <!-- Buscar Produto Por Barcode -->
+            <div id="frmProduct" class="col-md-6">
+                <input type="text" class="form-control" id="searchBarcode" maxlength="30" spellcheck="false">
+            </div>
+            <div class="col-md-2">
+                <img src="../public/img/barcode.png" alt="barcode" id="productimgview">
+                <!--<button type="button" class="btn btn-info" id="btnRead" onclick="buscarProdutoPorBarcode()">Buscar Código</button>-->
+            </div>
+
+
+            <!-- Buscar Produto -->
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="searchProduct" maxlength="30" spellcheck="false">
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary" id="btnRead" onclick="buscarProduto()">Buscar</button>
+            </div>
+
+            <hr class="mt-4 border border-secondary border -1">
+
+            <!-- ID do Produto -->
+            <div class="col-md-5" id="idProduct">
+                <label for="inputIdProduct" class="form-label">ID</label>
+                <input class="form-control" type="text" id="inputIdProduct">
+            </div>
+            <!--placeholder="id"-->
+
+            <!-- Nome do Produto -->
+            <div class="col-md-5">
+                <label for="inputNameProduct" class="form-label">Produto</label>
+                <input class="form-control" type="text" id="inputNameProduct" spellcheck="false" maxlength="50"
+                    required>
+            </div>
+
+            <!-- Barcode do Produto -->
+            <div class="col-md-5">
+                <label for="inputBarcodeProduct" class="form-label">Código de barras</label>
+                <input class="form-control" type="text" id="inputBarcodeProduct" spellcheck="false" maxlength="15"
+                    required>
+                <small id="barcodeHelp" class="form-text"></small> <!-- Mensagem de erro/sucesso -->
+            </div>
+
+            <!-- Fornecedor -->
+            <div class="col-md-4">
+                <label for="selectSupplier" class="form-label">Fornecedor</label>
+                <select class="form-control" id="selectSupplier" required>
+                    <option value="">Carregando fornecedores...</option>
+                </select>
+            </div>
+
+            <!--Preço do Produto-->
+            <!--step="any" // para colocar casas decimais-->
+            <div class="col-md-2">
+                <label for="inputPriceProduct" class="form-label">Preço</label>
+                <input class="form-control" type="number" id="inputPriceProduct" spellcheck="false" maxlength="50"
+                    required step="any">
+            </div>
+
+            <!-- Data -->
+            <div class="col-md-2">
+                <label for="dataProduct" class="form-label">Data</label>
+                <input type="text" class="form-control" id="dataProduct" disabled>
+            </div>
+
+            <!-- Quebra de linha -->
+            <div class="w-100 mt-1"></div>
+
+            <!-- Quantidade -->
+            <div class="col-md-3">
+                <label for="inputAmountProduct" class="form-label">Quantidade</label>
+                <input type="text" class="form-control" id="inputAmountProduct">
+            </div>
+
+            <!-- Unidade de medida -->
+            <div class="col-md-3">
+                <label for="selectUnit" class="form-label">Unidade</label>
+                <select class="form-control" id="selectUnit">
+                    <option value=""></option>
+                    <option value="un">un</option>
+                    <option value="pc">pc</option>
+                    <option value="cx">cx</option>
+                    <option value="kg">kg</option>
+                    <option value="cm">cm</option>
+                </select>
+            </div>
+
+            <!-- Local de armazenamento -->
+            <div class="col-md-4">
+                <label for="inputlocalproduct" class="form-label">Local de armazenamento</label>
+                <input type="text" class="form-control" id="inputlocalproduct">
+            </div>
+
+            <!-- Imagem do produto -->
+            <div class="col-md-4">
+                <img src="../public/img/camera.png" alt="imagem" id="imageProductPreview">
+            </div>
+            <!--Upload de imagem-->
+            <div class="col-12">
+                <!--<input type="button" class="btn btn-secondary" value="Upload de imagem" onclick="uploadImage()">-->
+            </div>
+
+
+            <!-- Botões -->
+            <div class="mt-5">
+                <button type="submit" class="btn btn-success" id="btnCreate">Adicionar</button>
+                <button type="submit" class="btn btn-warning" id="btnUpdate">Editar</button>
+                <button type="button" class="btn btn-danger" id="btnDelete" onclick="excluirProduto()">Excluir</button>
+                <button type="reset" class="btn btn-info text-white" id="btnReset" onclick="resetForm()">Limpar</button>
+                <button type="button" class="btn btn-secondary" onclick="uploadImage()">Upload</button>
+            </div>
+
+        </form>
+    </div>
+    <script src="../public/js/bootstrap.min.js"></script>
+    <script src="produtos.js"></script>
+</body>
+
+</html>
